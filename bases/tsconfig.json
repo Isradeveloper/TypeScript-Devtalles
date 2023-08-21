@@ -107,5 +107,6 @@
     "skipLibCheck": true                            /* Skip type checking all .d.ts files. */
   },
   "exclude": ["node_modules"], // "node_modules/*.ts
+  "include": ["ES6"]
   // "include": ["node_modules"] | "node_modules/*.ts
 }
