@@ -1,0 +1,3 @@
+(()=>{
+  let nada: undefined = undefined;
+})()
