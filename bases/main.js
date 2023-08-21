@@ -1,59 +1,111 @@
 "use strict";
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
 (() => {
-    const avengers = {
-        nick: 'Samuel L. Jackson',
-        ironman: 'Robert Downey Jr.',
-        vision: 'Paul Bettany',
-        activo: true,
-        poder: 1500.4234
+    let flash = {
+        name: 'Barry Allen',
+        age: 24,
+        powers: [1, 2]
     };
-    const { poder, vision } = avengers;
-    console.log(poder.toFixed(2), vision.toUpperCase());
-    // const printAvenger = (avengers: Avengers):void => {
-    //   console.log(avengers.vision); 
-    // }
-    const printAvenger = (_a) => {
-        var { ironman } = _a, resto = __rest(_a, ["ironman"]);
-        console.log(avengers.vision);
+    let superman = {
+        name: 'Clark Kent',
+        age: 60,
+        powers: [1],
+        getName() {
+            return this.name;
+        }
     };
-    const avengersArr = ['Cap. América', true, 1055.2];
-    const [, ironman] = avengersArr;
 })();
 (() => {
-    const ironman = {
-        name: 'Ironman',
-        weapon: "Armorsuit"
-    };
-    const captainAmerica = {
-        name: 'Capitán América',
-        weapon: "Escudo"
-    };
-    const thor = {
-        name: 'Thor',
-        weapon: "Mjolnir"
-    };
-    const avengers = [ironman, thor, captainAmerica];
-    for (const avenger of avengers) {
-        console.log(avenger.name, avenger.weapon);
+    class Mutant {
+        constructor(age, name, realName) {
+            this.age = age;
+            this.name = name;
+            this.realName = realName;
+        }
+        mutantPower(id) {
+            console.log(`I am a mutant ${id}`);
+        }
     }
 })();
 (() => {
-    const nombre = 'Fernando';
-    const getName = () => {
-        console.log('Viejo getName');
+    const client = {
+        name: 'Fernando',
+        age: 25,
+        address: {
+            id: 125,
+            zip: 'KYZ SUD',
+            city: 'Ottawa '
+        },
+        getFullAddress(id) {
+            return this.address.city;
+        }
     };
-    // getName = () => {console.log('Nuevo getName')}
-    // getName()
+    const client2 = {
+        name: 'Melissa',
+        age: 30,
+        address: {
+            city: 'Toronto',
+            id: 120,
+            zip: 'KYZX 332'
+        },
+        getFullAddress(id) {
+            return this.address.city;
+        }
+    };
+});
+(() => {
+    let addNumberFunction;
+    addNumberFunction = (a, b) => {
+        return 10;
+    };
+})();
+(() => {
+    // Crear interfaces
+    // Cree una interfaz para validar el auto (el valor enviado por parametro)
+    const conducirBatimovil = (auto) => {
+        auto.encender = true;
+        auto.velocidadMaxima = 100;
+        auto.acelerar();
+    };
+    const batimovil = {
+        encender: false,
+        velocidadMaxima: 0,
+        acelerar() {
+            console.log("...... gogogo!!!");
+        }
+    };
+    const guason = {
+        reir: true,
+        comer: true,
+        llorar: false
+    };
+    const reir = (guason) => {
+        if (guason.reir) {
+            console.log("JAJAJAJA");
+        }
+    };
+    const ciudadGotica = (ciudadanos) => {
+        return ciudadanos.length;
+    };
+    /*
+      propiedades:
+        - nombre
+        - edad
+        - sexo
+        - estadoCivil
+        - imprimirBio(): void // en consola una breve descripcion.
+    */
+    class Persona {
+        constructor(nombre, edad, sexo, estadoCivil) {
+            this.nombre = nombre;
+            this.edad = edad;
+            this.sexo = sexo;
+            this.estadoCivil = estadoCivil;
+        }
+        imprimirBio() {
+            console.log(`Hola mi nombre es ${this.nombre} tengo ${this.edad} años, soy de género ${this.sexo} y mi estado civil es ${this.estadoCivil}`);
+        }
+    }
+    const persona1 = new Persona("Isra", 21, "Másculino", "Soltero");
+    persona1.imprimirBio();
 })();
 //# sourceMappingURL=main.js.map
